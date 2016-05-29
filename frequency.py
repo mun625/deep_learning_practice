@@ -26,12 +26,11 @@ def FileToWord(fp):
 
 	for key, value in word_dic.iteritems():
 		print key, float(value)/total_count
-	print total_count
 
 
 def main():
 	tweet_file = open(sys.argv[1])
-	lines(tweet_file)
+	#lines(tweet_file)
 	FileToWord(sys.argv[1])
 
 if __name__ == '__main__':
