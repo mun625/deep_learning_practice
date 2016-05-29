@@ -31,19 +31,20 @@ def makescore(fp, score_dic):
 		tester = json.loads(line)
 		if 'text' in tester:
 			score = SentenceToScore(tester['text'], score_dic)
-			print tester['text'], " => ", score
 			scores.append(score)
+			print score
 		else:
-			print 'no text! => 0'
+			scores.append(0)
+			print 0
 	return scores
 
 
 def main():
     sent_file = open(sys.argv[1])
     tweet_file = open(sys.argv[2])
-    hw()
-    lines(sent_file)
-    lines(tweet_file)
+    #hw()
+    #lines(sent_file)
+    #lines(tweet_file)
 
     score_dic = scoredic(sys.argv[1])			# make AFINN-111.txt to dictionary
     scores = makescore(sys.argv[2], score_dic)	# derive the sentiment score of each tweet
