@@ -31,7 +31,7 @@ def FileToWord(fp):
 
 def main():
 	tweet_file = open(sys.argv[1])
-	lines(tweet_file)
+	#lines(tweet_file)
 	FileToWord(sys.argv[1])
 
 if __name__ == '__main__':
