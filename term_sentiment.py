@@ -54,19 +54,21 @@ def scoredic(fp):
 def main():
     sent_file = open(sys.argv[1])
     tweet_file = open(sys.argv[2])
-    hw()
-    lines(sent_file)
-    lines(tweet_file)
+    #hw()
+    #lines(sent_file)
+    #lines(tweet_file)
 
     score_dic = scoredic(sys.argv[1])	# make AFINN-111.txt to dictionary
     filterd_sentence = FilterZeroScoreSentence(sys.argv[2], score_dic)
     new_score_dic = DeriveScoreFromSentence(filterd_sentence)
 
-    f = open("problem_3_submission.txt","w")	# write score to problem_3_submission.txt
-    for key, value in new_score_dic.iteritems():
+    #f = open("problem_3_submission.txt","w")	# write score to problem_3_submission.txt
+    #for key, value in new_score_dic.iteritems():
     	#f.write("%s %s\n" % (str(key), str(value)))
-    	f.write("%s\n" % str(key))
-    f.close()
+    #f.close()
+
+    for key, value in new_score_dic.iteritems():
+    	print key, value
 
 if __name__ == '__main__':
     main()
